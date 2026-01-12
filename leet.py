@@ -10,7 +10,7 @@ def two_sum():
 two_sum()
 
 def palindrome():
-    int s = int(input("input number:"))
+    s = int(input("input number:"))
     rev = 0
     temp = s
     while s > 0:
