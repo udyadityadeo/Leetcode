@@ -47,3 +47,4 @@ if __name__ == "__main__":
     list2 = build_linked_list([1,3,4])
     merged_list = sol.mergetwolists(list1, list2)
     print_linked_list(merged_list)
+
