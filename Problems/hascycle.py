@@ -1,9 +1,8 @@
 class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
+    def __init__(self, val=0, next=None):
         self.val = val
-        self.left = left
-        self.right = right
-        
+        self.next = next
+
 def build_tree(values):
     if not values or values[0] is None:
         return None
@@ -22,13 +21,22 @@ def build_tree(values):
         i += 1
     return root
 
-class Solution:
-    def maxdepth(self, root):
-        if not root:
-            return 0
 
-        return 1 + max(self.maxdepth(root.left), self.maxdepth(root.right))
+class Solution:
+    def hasCycle(self, head):
+        if not head:
+            return False
+    
+        slow = head
+        fast = head.next
+        while fast and fast.next:
+            if slow == fast:
+                return True
+            slow = slow.next
+            fast = fast.next.next
+        return False
 
 if __name__ == "__main__":
     sol = Solution()
-    print(sol.maxdepth(build_tree([1, 2, 3, 4, 5])))
+    print(sol.hasCycle(build_tree([3,2,0,-4])))
+    print(sol.hasCycle(build_tree([1,2])))

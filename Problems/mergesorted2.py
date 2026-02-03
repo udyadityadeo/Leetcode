@@ -14,7 +14,6 @@ class Solution:
                 p2 -= 1
             p -= 1
 
-        # If there are any remaining elements in num2, copy them
         while p2 >= 0:
             num1[p] = num2[p2]
             p2 -= 1
